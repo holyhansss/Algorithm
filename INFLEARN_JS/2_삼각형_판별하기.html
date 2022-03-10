@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(a, b, c){
+                // my answer
+                let answer;
+                let longest;
+
+                if(a>b) longest = a;
+                else longest = b;
+
+                if(longest<c) longest = c;
+                else if(longest === a) a = c;
+                else if(longest === b) b = c;
+
+                if(a+b > longest) answer = true;
+                else answer = false;
+
+                // 강의자 answer
+                // let answer, max;
+                // let sum = a+b+c;
+                // if(a>b) max = a;
+                // else max = b;
+                // if(c>max) max = c;
+
+                // if((sum-max) <= max) answer = false;
+
+                return answer;
+            }
+
+            console.log(solution(13, 33, 17));
+            console.log(solution(6, 7, 11));
+        </script>
+    </body>
+</html>
