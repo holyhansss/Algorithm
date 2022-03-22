@@ -1,8 +1,27 @@
 
 function solution(arr){
-    let answer = Number.MAX_SAFE_INTEGER; 
- 
-    return rank;
+    let answer = Number.MIN_SAFE_INTEGER; 
+    let temp1 = 0; 
+    let temp2 = 0;
+
+    for(let i=0; i<arr.length; i++){
+        
+        for(let j=0; j<arr.length; j++){
+            temp1+=arr[i][j];
+            temp2+=arr[j][i]
+        }
+        answer =  Math.max(answer, temp1, temp2)
+        temp1 = 0;
+        temp2 = 0;
+    }
+    
+    for(let i=0; i<arr.length; i++){
+        temp1+= arr[i][i];
+        temp2+= arr[i][arr.length-i-1];
+    }
+    answer =  Math.max(answer, temp1, temp2)
+
+    return answer;
 }
 
 let arr =   [[10, 13, 10, 12, 15],
